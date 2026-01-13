@@ -4,6 +4,7 @@
 CONTAINERS=(
   "mtproto"
   "shadowsocks"
+  "proxy"
   "openconnect"
   "naive"
   "hysteria"
