@@ -19,7 +19,7 @@ for container in $ALL_CONTAINERS; do
     if [[ "$container" == *"$pattern"* ]]; then
       STATUS=$(docker inspect -f '{{.State.Status}}' "$container")
       if [[ "$STATUS" == "exited" || "$STATUS" == "created" || "$STATUS" == "dead" ]]; then
-        echo "ℹ️ Контейнер '$container' уже остановлен (статус: $STATUS)."
+        echo "✅ Контейнер '$container' уже остановлен (статус: $STATUS)."
       elif [[ "$STATUS" == "running" ]]; then
         echo "🛑 Останавливаю контейнер: $container"
         docker stop "$container" >/dev/null 2>&1
